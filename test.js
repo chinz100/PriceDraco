@@ -19,7 +19,7 @@ const alertfunc = (alertnow = false) => {
     axios(config)
         .then((response) => {
             let ans = JSON.parse(JSON.stringify(response.data))
-            let thb_us = 33
+            let thb_us = 32.82
             let DrapriceTHB = ans.Data.USDDracoRate * thb_us;
             let Wemixone_THB = ans.Data.USDWemixRate * thb_us;
             let alerttoline = `Draco-THB: ${parseFloat(DrapriceTHB).toFixed(3)}\n\rWemix-THB: ${parseFloat(Wemixone_THB).toFixed(3)}\n\rDraco-ExchageWemix: ${parseFloat(ans.Data.DracoPrice).toFixed(3)}`;
@@ -39,7 +39,23 @@ const alertfunc = (alertnow = false) => {
                 data: bodydata,
             };
 
-            if (alertnow) {
+            // console.log(configfailed.headers.authorization)
+
+            if (alertnow === 30) {
+
+                axios(configfailed)
+                    .then((response) => {
+                        // console.log(JSON.stringify(response.data));
+                    })
+                    .catch((error) => {
+                        console.log("Line noti err");
+                    });
+
+                /////// alert Group2
+
+            }else if(alertnow === 10){ //alert 5 min
+
+                configfailed.headers.authorization = `Bearer ${process.env.tokenline_PB}`
 
                 axios(configfailed)
                     .then((response) => {
@@ -60,6 +76,11 @@ console.log("Start ing...." + process.env.tokenline);
 alertfunc();
 cron.schedule('*/30 * * * *', () => {
 
-    alertfunc(true);
+    alertfunc(30);
+});
+
+cron.schedule('*/10 * * * *', () => {
+
+    alertfunc(10);
 });
 
