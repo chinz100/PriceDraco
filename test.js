@@ -88,9 +88,11 @@ let useDracobuthydra = 20 + Math.round(arr.reduce(reducer))
             let Wemixone_THB = ans.Data.USDWemixRate * thb_us;
             let DracoPriceWemix = parseFloat(ans.Data.DracoPrice).toFixed(4)
             let dragobuyHydra = parseFloat(DracoPriceWemix*useDracobuthydra).toFixed(4);
+            let calpriceRefine = parseFloat(HydraPriceWemix-dragobuyHydra).toFixed(4);
+            
 
       
-            let alerttoline = `\n\rDraco-THB: ${parseFloat(DrapriceTHB).toFixed(3)}\n\rWemix-THB: ${parseFloat(Wemixone_THB).toFixed(3)}\n\rDraco-ExchageWemix: ${DracoPriceWemix}\n\rDraco-Buy_Hydra : ${dragobuyHydra} wemix\n\r\n\r======= Hrdra ======= \n\rหลอม  ${useDracobuthydra} Draco + ${state} Egg\n\rHydraPriceWemix : ${HydraPriceWemix}\n\rTotal_Token : ${totlesupply_hydra}\n\rState : ${state}`;
+            let alerttoline = `\n\rDraco-THB: ${parseFloat(DrapriceTHB).toFixed(3)}\n\rWemix-THB: ${parseFloat(Wemixone_THB).toFixed(3)}\n\rDraco-ExchageWemix: ${DracoPriceWemix}\n\rDraco-Buy_Hydra : ${dragobuyHydra} wemix\n\r\n\r======= Hrdra ======= \n\rหลอม  ${useDracobuthydra} Draco + ${state} Egg\n\rHydraPriceWemix : ${HydraPriceWemix}\n\rTotal_Token : ${totlesupply_hydra}\n\rState : ${state}\n\rกำไรหลอมต่อรอบ : ${calpriceRefine} wemix`;
 
 
             // cal
