@@ -1,0 +1,1 @@
+node "D:\vscode_mir4\test.js"
