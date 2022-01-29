@@ -126,7 +126,7 @@ const alertfunc = async (alertnow = false) => {
 
 
 
-            let alerttoline = `\n\rDraco-THB: ${parseFloat(DrapriceTHB).toFixed(3)}\n\rWemix-THB: ${parseFloat(Wemixone_THB).toFixed(3)}\n\rDraco-ExchageWemix: ${DracoPriceWemix}\n\rDraco-Buy_Hydra : ${dragobuyHydra} wemix\n\r\n\r======= Hrdra ======= \n\rหลอม  ${useDracobuthydra} Draco + ${state} Egg\n\rHydraPriceWemix : ${HydraPriceWemix}\n\rTotal_Token : ${totlesupply_hydra}\n\rState : ${state}\n\rกำไรหลอมต่อรอบ : ${calpriceRefine} wemix`;
+            let alerttoline = `\n\rDraco-THB: ${parseFloat(DrapriceTHB).toFixed(3)}\n\rWemix-THB: ${parseFloat(Wemixone_THB).toFixed(3)}\n\rDraco-ExchageWemix: ${DracoPriceWemix}\n\rDraco-Buy_Hydra : ${dragobuyHydra} wemix\n\r\n\r======= Hrdra ======= \n\rหลอม  ${useDracobuthydra} Draco + ${state} Egg\n\rHydraPriceWemix : ${HydraPriceWemix}\n\rTotal_Token : ${totlesupply_hydra}\n\rState : ${state}, Tomorrow_state : ${parseInt(totlesupply_hydra / 100000) + 1}\n\rกำไรหลอมต่อรอบ : ${calpriceRefine} wemix`;
 
 
             // cal
