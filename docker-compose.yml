@@ -1,8 +1,5 @@
 version: "3.7"
-
-volumes:
-    html_public:  
-    vhost_public:            
+         
 networks:
     XDRACO:
 
