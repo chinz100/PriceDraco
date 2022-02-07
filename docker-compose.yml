@@ -1,0 +1,24 @@
+version: "3.7"
+
+volumes:
+    html_public:  
+    vhost_public:            
+networks:
+    XDRACO:
+
+services:
+
+    dracoprice:
+        build:
+            context: ./
+            dockerfile: run.dockerfile
+        working_dir: /usr/src/app
+        volumes:
+            - ./:/usr/src/app/
+        environment:
+            - TZ=Asia/Bangkok
+        restart: on-failure
+        env_file:
+            - .env
+        networks:
+            - XDRACO   
